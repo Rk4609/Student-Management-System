@@ -1,0 +1,40 @@
+/* SearchStudent.css */
+
+.search-container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  }
+  
+  .search-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th,
+  table td {
+    padding: 12px;
+    border: 1px solid #eee;
+    text-align: center;
+  }
+  
+  table th {
+    background-color: #f4f4f4;
+  }

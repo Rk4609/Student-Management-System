@@ -1,0 +1,161 @@
+/* .list-div{
+             background-color: rgb(101, 101, 248);
+             justify-content: center;
+             align-items: center;
+             display: flex;
+}
+.table{
+    background-color:blue;
+    color: white;
+   
+             /* justify-content: center; */
+             /* align-items: center; */
+             /* display: flex; */
+
+/* } */
+/* .container{
+    justify-content: center;
+    /* display: flex; */
+    /* align-items: center; */
+
+/* } */
+/* .edit-btn{
+    background-color: rgb(15, 185, 15);
+    color: white; */
+/* } */
+/* .deactivate-btn{
+    background-color: rgb(226, 17, 17);
+    color: white; */
+/* } */
+/* .view-btn{
+    background-color: gray;
+    color: white; */
+/* }  */
+
+/* .Addlist{
+    background-color: green;
+    color: white;
+} */ 
+
+
+
+
+/* Container for the whole list and header */
+.list-div {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Heading + Header Actions */
+  .list-div h2 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    color: #333;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  /* Buttons - Common Style */
+  .header button,
+  .action-container button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  
+  /* Header Buttons */
+  .search-btn {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .inactive-btn {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+  
+  .Addlist {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .search-btn:hover,
+  .inactive-btn:hover,
+  .Addlist:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+  
+  /* Table Styling */
+  .container {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+    padding: 12px;
+    font-size: 15px;
+    color: #333;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .container td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .container tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* Actions column */
+  .action-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  /* Action Buttons */
+  .edit-btn {
+    background-color: #ffc107;
+    color: #fff;
+  }
+  
+  .deactivate-btn {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .view-btn {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .edit-btn:hover,
+  .deactivate-btn:hover,
+  .view-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.95;
+  }
