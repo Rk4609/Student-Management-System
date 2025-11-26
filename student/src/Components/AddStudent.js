@@ -8,7 +8,7 @@ const AddStudent = () => {
     gender: '',
     standard: '',
     age: '',
-    email: '',
+    email: '',                      
     status: ''
   });
 
@@ -66,6 +66,7 @@ const AddStudent = () => {
           <option value="">Select Gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
+      
         </select>
 
         <label>Standard:</label>

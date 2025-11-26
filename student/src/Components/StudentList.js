@@ -1,5 +1,4 @@
-import React, { useState,useEffect } from 'react'
-// import { Link } from 'react-router-dom';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './StudentList.css'
 
@@ -12,18 +11,22 @@ const StudentList = () => {
     };
     
     useEffect(() => {
-    fetch("http://localhost:5093/api/Students")
-    .then((response)=>{
-        if(!response.ok){
-            throw new Error('Network response was not ok');
+
+      const fetchStudents= async ()=>{
+        try{
+          const response=  await fetch("http://localhost:5093/api/Students")
+          if(!response.ok){
+            throw new Error("network response is not ok");
+          }
+        const data = await response.json();
+          setStudents(data);
         }
-        return response.json();
-    })
-    .then((data)=>
-    setStudents(data))
-    .catch((error)=>
-    console.error("Error fetching data:",error));
-    
+        catch(error){
+               console.error("Error fetching data",Error);
+        }
+      };
+
+      fetchStudents();
     }, [])
       
    
@@ -53,7 +56,7 @@ const StudentList = () => {
   return (
     <div>
         <div className='list-div'>
-       <h2>Student Management
+       <h2><u>Student Management</u>
         <div className='header'>
         <button className='search-btn' onClick={()=>navigate('/search')}>Search student</button>
         
@@ -61,6 +64,7 @@ const StudentList = () => {
         <button className='add-btn'>Add student</button>
         </Link> */}
         <button className='Addlist' onClick={handleAddStudent}>Add Student</button>
+        <button className='loginsignup'onClick={()=>navigate('/loginsignup')}>Login/Signup</button>
         </div>
        </h2>
       
