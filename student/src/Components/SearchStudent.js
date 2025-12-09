@@ -23,7 +23,7 @@ const SearchStudent = () => {
   };
 
   const filteredStudents = students.filter((student) =>
-    student.studentname.toLowerCase().includes(searchTerm.toLowerCase())
+    student.Studentname.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -50,7 +50,7 @@ const SearchStudent = () => {
           {filteredStudents.map((student) => (
             <tr key={student._id}>
               <td>{student._id}</td>
-              <td>{student.studentname}</td>
+              <td>{student.Studentname}</td>
               <td>{student.gender}</td>
               <td>{student.standard}</td>
               <td>{student.email}</td>
