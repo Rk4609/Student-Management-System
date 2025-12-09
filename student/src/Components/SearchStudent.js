@@ -14,7 +14,7 @@ const SearchStudent = () => {
 
   const fetchStudents = async () => {
     try {
-      const res = await fetch('http://localhost:5093/api/Students');
+      const res = await fetch('http://localhost:5000/api/students');
       const data = await res.json();
       setStudents(data);
     } catch (err) {
@@ -48,8 +48,8 @@ const SearchStudent = () => {
         </thead>
         <tbody>
           {filteredStudents.map((student) => (
-            <tr key={student.id}>
-              <td>{student.id}</td>
+            <tr key={student._id}>
+              <td>{student._id}</td>
               <td>{student.studentname}</td>
               <td>{student.gender}</td>
               <td>{student.standard}</td>

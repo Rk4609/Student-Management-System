@@ -12,7 +12,7 @@ const ViewStudent = () => {
   useEffect(() => {
     const fetchStudent = async () => {
       try {
-        const res = await fetch(`http://localhost:5093/api/Students/${id}`);
+        const res = await fetch(`http://localhost:5000/api/students/${id}`);
         if (res.ok) {
           const data = await res.json();
           setStudent(data);
@@ -36,7 +36,7 @@ const ViewStudent = () => {
     <div className="view-container">
       <h2>Student Profile</h2>
       <div className="student-profile-card">
-        <p><strong>Name:</strong> {student.studentname}</p>
+        <p><strong>Name:</strong> {student.Studentname}</p>
         <p><strong>Gender:</strong> {student.gender}</p>
         <p><strong>Standard:</strong> {student.standard}</p>
         <p><strong>Age:</strong> {student.age}</p>

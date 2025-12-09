@@ -26,7 +26,7 @@ const AddStudent = () => {
     console.log("student object:",student);
 
     try {
-      const response = await fetch('http://localhost:5093/api/Students', {
+      const response = await fetch('http://localhost:5000/api/students', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -14,7 +14,7 @@ const StudentList = () => {
 
       const fetchStudents= async ()=>{
         try{
-          const response=  await fetch("http://localhost:5093/api/Students")
+          const response=  await fetch("http://localhost:5000/api/students")
           if(!response.ok){
             throw new Error("network response is not ok");
           }
@@ -35,7 +35,7 @@ const StudentList = () => {
         if (!confirmDelete) return;
       
         try {
-          const response = await fetch(`http://localhost:5093/api/Students/${id}`, {
+          const response = await fetch(`http://localhost:5000/api/students/${id}`, {
             method: 'DELETE',
           });
       
@@ -90,9 +90,9 @@ const StudentList = () => {
         <tbody>
             {students.map((student) =>(
                 // table all data fetch backend
-                <tr key={student.id}>
-                    <td>{student.id}</td>
-                    <td>{student.studentname}</td>
+                <tr key={student._id}>
+                    <td>{student._id}</td>
+                    <td>{student.Studentname}</td>
                     <td>{student.gender}</td>
                     <td>{student.standard}</td>
                     <td>{student.age}</td>
@@ -100,10 +100,10 @@ const StudentList = () => {
                     <td>{student.status}</td>
                     <td>
                         <div className='action-container'>
-                        <button className='edit-btn' onClick={()=>navigate(`/update/${student.id}`)}>Edit</button>
-                <button className='deactivate-btn' onClick={()=>handleDelete(student.id)}>Delete</button>
+                        <button className='edit-btn' onClick={()=>navigate(`/update/${student._id}`)}>Edit</button>
+                <button className='deactivate-btn' onClick={()=>handleDelete(student._id)}>Delete</button>
                
-                <button className='view-btn' onClick={()=>navigate(`/View/${student.id}`)}>View Profile</button>
+                <button className='view-btn' onClick={()=>navigate(`/View/${student._id}`)}>View Profile</button>
             
                         </div>
                     </td>

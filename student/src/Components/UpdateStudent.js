@@ -14,13 +14,13 @@ const UpdateStudent = () => {
   });
 
   const navigate = useNavigate();
-  const { id } = useParams(); // URL से student ID मिलेगा
+  const { id } = useParams(); 
 
   // GET student by ID
   useEffect(() => {
     const fetchStudent = async () => {
       try {
-        const response = await fetch(`http://localhost:5093/api/Students/${id}`);
+        const response = await fetch(`http://localhost:5000/api/students/${id}`);
         if (response.ok) {
           const data = await response.json();
           setStudent(data);
@@ -50,7 +50,7 @@ const UpdateStudent = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`http://localhost:5093/api/Students/${id}`, {
+      const response = await fetch(`http://localhost:5000/api/students/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -77,8 +77,8 @@ const UpdateStudent = () => {
         <label>Name</label>
         <input
           type="text"
-          name="studentname"
-          value={student.studentname}
+          name="Studentname"
+          value={student.Studentname}
           onChange={handleChange}
           required
         />

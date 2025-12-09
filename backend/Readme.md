@@ -1,2 +1,1 @@
-# Student Management backend -Express.js
-
+# Student management backend

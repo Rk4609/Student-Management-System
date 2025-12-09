@@ -1,6 +1,7 @@
-import express, { Router } from "express";
+import express, { urlencoded } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import studentRoutes from "../routes/student.routes.js";
 
 
 const app = express();
@@ -13,11 +14,9 @@ app.use(
 );
 
 app.use(express.json({ limit: "16kb" }));
-app.use(express.urlencoded({ extended: true, limit: "16kb" }));
-app.use(express.static("public"));
-app.use(cookieParser());
-
-
-
+app.use(urlencoded());
+app.use(express.static("public"))
+app.use(cookieParser())
+app.use("/api/students", studentRoutes);
 
 export { app };

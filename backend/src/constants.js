@@ -1,1 +1,1 @@
-export const DB_NAME="StudentManagement"
+export const DB_NAME="ExpressCode"
