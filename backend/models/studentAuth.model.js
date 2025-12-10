@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-const studentAccessSchema = new Schema(
+const studentAuthSchema = new Schema(
   {
     username: {
       type: String,
@@ -41,17 +41,17 @@ const studentAccessSchema = new Schema(
   { timestamps: true }
 );
 
-studentAccessSchema.pre("save", async function (next) {
+studentAuthSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
-  this.password = bcrypt.hash(this.password, 10);
+  this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 
-studentAccessSchema.methods.isPasswordCorrect = async function (password) {
+studentAuthSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-studentAccessSchema.methods.generateAccessToken = function () {
+studentAuthSchema.methods.generateAccessToken = function () {
    return jwt.sign(
         {
              _id:this._id,
@@ -65,7 +65,7 @@ studentAccessSchema.methods.generateAccessToken = function () {
          }
 )
 }
-studentAccessSchema.methods.generateRefreshToken = function () {
+studentAuthSchema.methods.generateRefreshToken = function () {
     return jwt.sign(
         {
             _id:this._id
@@ -78,7 +78,7 @@ studentAccessSchema.methods.generateRefreshToken = function () {
 }
 
 
-export const StudentAccess = mongoose.model(
-  "StudentAccess",
-  studentAccessSchema
+export const StudentAuth = mongoose.model(
+  "StudentAuth",
+  studentAuthSchema
 );

@@ -1,4 +1,5 @@
 import { Student } from "../models/student.model.js";
+import { asynchandler } from "../utills/asyncHandler.js";
 
 // ➤ Get All Students
 export const getStudents = async (req, res) => {
@@ -63,3 +64,5 @@ export const deleteStudent = async (req, res) => {
     res.status(500).json({ message: "Delete failed", error });
   }
 };
+
+
