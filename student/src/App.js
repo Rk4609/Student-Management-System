@@ -5,7 +5,7 @@ import AddStudent from "./Components/AddStudent";
 import UpdateStudent from "./Components/UpdateStudent";
 import ViewStudent from "./Components/ViewStudent";
 import SearchStudent from "./Components/SearchStudent";
-// import LoginSignup from "./Components/LoginSignup";
+import LoginSignup from "./Components/LoginSignup";
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
             <Route path="/update/:id"element={<UpdateStudent />} />
             <Route path="/View/:id"element={<ViewStudent />} />
             <Route path="/search"element={<SearchStudent />} />
-            {/* <Route path="/loginsignup"element={<LoginSignup />} /> */}
+            <Route path="/loginsignup"element={<LoginSignup />} />
 
             
             </Routes>

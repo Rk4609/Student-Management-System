@@ -1,10 +1,10 @@
-import { asyncHandler } from "../utills/asyncHandler";
-import { ApiError } from "../utills/ApiError";
-import { StudentAuth } from "../models/studentAuth.model";
-import { ApiResponse } from "../utills/ApiResponse";
+import { asynchandler } from "../utills/asynchandler.js";
+import { ApiError } from "../utills/ApiError.js";
+import { StudentAuth } from "../models/studentAuth.model.js";
+import { ApiResponse } from "../utills/ApiResponse.js";
 
-const registerStudent = asyncHandler(async (req, res) => {
-  const { fullName, email, username, password } = req.body;
+const registerStudent = asynchandler(async (req, res) => {
+  const { fullName, email, username, password } = req.body
 
   if (
     [fullName, email, username, password].some((field) => field?.trim() === "")
