@@ -64,7 +64,7 @@ const StudentList = () => {
         <button className='add-btn'>Add student</button>
         </Link> */}
         <button className='Addlist' onClick={handleAddStudent}>Add Student</button>
-        <button className='loginsignup'onClick={()=>navigate('/loginsignup')}>Login/Signup</button>
+        {/* <button className='loginsignup'onClick={()=>navigate('/loginsignup')}>Login/Signup</button> */}
         </div>
        </h2>
       

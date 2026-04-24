@@ -3,14 +3,6 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 const studentAuthSchema = new Schema(
   {
-    username: {
-      type: String,
-      unique: true,
-      required: true,
-      lowercase: true,
-      trim: true,
-      index: true,
-    },
     email: {
       type: String,
       unique: true,
@@ -24,12 +16,7 @@ const studentAuthSchema = new Schema(
       trim: true,
       index: true,
     },
-    // avatar: {
-    //   type: String, //cloudinary
-    // },
-    // coverImage:{
-    //     type:String   //cloudinary
-    // },
+   
     password: {
       type: String,
       required: [true, "Password is required"],
@@ -62,8 +49,8 @@ studentAuthSchema.methods.generateAccessToken = function () {
         {
              _id:this._id,
               fullName:this.fullName,
-             email:this.email,
-             username:this.username
+             email:this.email
+             
             
          },
          process.env.ACCESS_TOKEN_SECRET,

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './AddStudent.css';
+import React, { useState } from 'react'
+import './AddStudent.css'
 import { useNavigate } from 'react-router-dom';
 
 const AddStudent = () => {

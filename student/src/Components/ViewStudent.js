@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import './ViewStudent.css'; // Optional: for styling
+import './ViewStudent.css'; 
 
 const ViewStudent = () => {
   const { id } = useParams();
